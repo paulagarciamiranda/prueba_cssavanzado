@@ -1,13 +1,12 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: roboto;
 }
 
-
 body {
   background-color: #e0f4f8;
-  width: 100%;
+  width: 1fr;
   display: grid;
   grid-template-areas:
     "nav"
@@ -17,7 +16,7 @@ body {
     "contacto"
     "footer";
   grid-template-rows: 80px repeat(4, auto) 80px;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
 }
 
 nav {
@@ -38,6 +37,18 @@ nav ul {
   display: none;
 }
 
+.logo {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 30px;
+}
+
 a {
   text-decoration: none;
   color: aliceblue;
@@ -56,7 +67,7 @@ h1 {
 
 main {
   grid-area: main;
-  width: 100%;
+  width: 1fr;
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -69,7 +80,7 @@ h2 {
 }
 
 #principal {
-  width: 100%;
+  width: 1fr;
   background-image: url("../img/fondoXS.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -78,7 +89,7 @@ h2 {
 }
 
 .glass-window {
-  margin: 30px 16px;
+  margin: 30px 0px;
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -104,7 +115,7 @@ h2 {
 }
 
 .registro {
-  margin: 32px;
+  margin: 32px 0px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -125,7 +136,8 @@ button {
 }
 
 #idiomas {
-  margin: 30px 16px;
+  width: 1fr;
+  margin: 30px 0px;
   grid-area: idiomas;
   display: flex;
   flex-direction: column;
@@ -138,11 +150,12 @@ button {
 }
 
 #idiomas button {
-  width: 60%;
+  width: 40%;
 }
 
 #suscripcion {
-  margin: 30px 16px;
+  width: 1fr;
+  margin: 30px 0px;
   position: relative;
   z-index: 2;
   grid-area: suscripcion;
@@ -248,18 +261,23 @@ button {
   font-weight: 500;
 }
 
+.banderas{
+  display: flex;
+  justify-content: center;
+}
+
 #contacto {
   grid-area: contacto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: 100%;
-  margin: 50px 16px;
+  width: 1fr;
+  margin: 50px 0px;
 }
 
 .form {
-  width: 80%;
+  width: 70%;
 }
 
 .form * {
@@ -273,7 +291,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4px;
   margin-top: 20px;
+  width: 1fr;
+  height: 80px;
 }
 
 footer p {
@@ -282,12 +303,9 @@ footer p {
 }
 
 @media (min-width: 1000px) {
-*{
-  border: 1px solid red;
-}
 
   body {
-    width: 100%;
+    width: calc(1fr + auto);
     height: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -316,8 +334,11 @@ footer p {
     color: aliceblue;
   }
 
-  h1 {
-    margin: 20px 0px;
+  .logo{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-bottom: 20px; 
   }
 
   .menu {
@@ -399,6 +420,10 @@ footer p {
     margin: 80px 0px;
     width: 1fr;
     grid-area: contacto;
+  }
+
+  .form {
+    width: 50%;
   }
 
   footer {
